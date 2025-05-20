@@ -72,7 +72,7 @@ Funcionalidades principais:
 
 1. Navegue até a pasta do backend:
    ```bash
-   cd support-system-backend
+   cd support-system/support-system
    ```
 
 2. Compile o projeto:
