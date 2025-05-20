@@ -1,0 +1,346 @@
+{
+	"info": {
+		"_postman_id": "4877f176-ee96-4ee5-875a-08df3bca4934",
+		"name": "Support System API - Port 8080",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44938296",
+		"_collection_link": "https://maysa-7601111.postman.co/workspace/Maysa's-Workspace~62df61bc-1470-4061-8e89-218f0f0ff7a4/collection/44938296-4877f176-ee96-4ee5-875a-08df3bca4934?action=share&source=collection_link&creator=44938296"
+	},
+	"item": [
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Criar cliente (validação de email único)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nomeCompleto\": \"João Silva\",\n  \"email\": \"joao@exemplo.com\",\n  \"telefone\": \"(11) 99999-9999\",\n  \"tipo\": \"PESSOA_FISICA\",\n  \"documento\": \"123.456.789-09\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/clientes",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clientes"
+							]
+						},
+						"description": "Cria um novo cliente com validação de e-mail único"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar clientes com paginação",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/clientes?page=0&size=10",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clientes"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						},
+						"description": "Retorna lista paginada de clientes"
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar cliente por ID com tickets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/clientes/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clientes",
+								"1"
+							]
+						},
+						"description": "Retorna cliente detalhado com informações de tickets"
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar cliente com validação",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nomeCompleto\": \"João Silva Atualizado\",\n  \"email\": \"joao.novo@exemplo.com\",\n  \"telefone\": \"(11) 98888-8888\",\n  \"status\": \"ATIVO\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/clientes/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clientes",
+								"1"
+							]
+						},
+						"description": "Atualiza cliente com validações de documento e e-mail"
+					},
+					"response": []
+				},
+				{
+					"name": "Verificar disponibilidade de email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/clientes/verificar-email?email=joao@exemplo.com",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clientes",
+								"verificar-email"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "joao@exemplo.com"
+								}
+							]
+						},
+						"description": "Verifica se email já está cadastrado"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tickets",
+			"item": [
+				{
+					"name": "Criar ticket com validação",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"titulo\": \"Problema no login\",\n  \"descricao\": \"Não consigo acessar o sistema\",\n  \"categoria\": \"BUG\",\n  \"prioridade\": \"ALTA\",\n  \"clienteId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/tickets",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tickets"
+							]
+						},
+						"description": "Cria novo ticket com validações de campos obrigatórios"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar tickets com filtros",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/tickets?status=ABERTO&clienteId=1&page=0&size=10",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tickets"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "ABERTO"
+								},
+								{
+									"key": "clienteId",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						},
+						"description": "Lista tickets com filtros e paginação"
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar status do ticket",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": \"RESOLVIDO\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/tickets/1/status",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tickets",
+								"1",
+								"status"
+							]
+						},
+						"description": "Atualiza apenas o status do ticket"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dashboard",
+			"item": [
+				{
+					"name": "Estatísticas gerais",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/dashboard",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"dashboard"
+							]
+						},
+						"description": "Retorna estatísticas de tickets (abertos, andamento, resolvidos)"
+					},
+					"response": []
+				},
+				{
+					"name": "Estatísticas por cliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/dashboard/clientes",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"dashboard",
+								"clientes"
+							]
+						},
+						"description": "Retorna estatísticas de tickets por cliente"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Status code is successful\", function () {",
+					"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);",
+					"});",
+					"",
+					"pm.test(\"Response time is acceptable\", function () {",
+					"    pm.expect(pm.response.responseTime).to.be.below(500);",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
