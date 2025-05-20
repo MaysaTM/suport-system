@@ -1,0 +1,48 @@
+// Cores
+$primary-blue: #1a73e8;
+$secondary-blue: #4285f4;
+$dark-blue: #0d47a1;
+$light-blue: #e8f0fe;
+$accent-blue: #8ab4f8;
+
+
+// Cores de status
+$success-green: #34a853;
+$warning-orange: #f9ab00;
+$error-red: #d93025;
+
+// Tons de cinza
+$white: #ffffff;
+$gray-100: #f5f7fa;
+$gray-200: #e8eaed;
+$gray-500: #5f6368;
+$gray-700: #3c4043;
+$gray-900: #202124;
+
+// Espaçamentos
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+
+// Bordas
+$border-radius: 8px;
+$border-color: $gray-200;
+
+// Sombras
+$box-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+$box-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+// Transições
+$transition-fast: 0.15s ease;
+$transition-normal: 0.3s ease;
+
+// Font sizes
+$font-size-sm: 12px;
+$font-size-md: 14px;
+$font-size-lg: 16px;
+$font-size-xl: 20px;  // <-- Esta é a variável que estava faltando
+$font-size-xxl: 24px;
+
+

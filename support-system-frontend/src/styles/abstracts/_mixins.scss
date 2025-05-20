@@ -1,0 +1,36 @@
+// Mixin para botões
+@mixin button($bg-color, $text-color) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $border-radius;
+  border: none;
+  background-color: $bg-color;
+  color: $text-color;
+  font-weight: 500;
+  cursor: pointer;
+  transition: $transition-normal;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $box-shadow-md;
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Mixin para cards
+@mixin card {
+  background: $white;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow-sm;
+  padding: $spacing-lg;
+  transition: $transition-normal;
+  
+  &:hover {
+    box-shadow: $box-shadow-md;
+  }
+}
