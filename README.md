@@ -127,10 +127,6 @@ Funcionalidades principais:
 
 
 
-##  Video do projeto funcionando
-
-
-https://github.com/user-attachments/assets/c9ca6040-25c9-41ad-9480-4096a0af403b
 
 
 
